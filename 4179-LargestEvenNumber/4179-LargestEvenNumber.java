@@ -1,0 +1,12 @@
+// Last updated: 7/9/2026, 9:48:09 AM
+class Solution {
+    public String largestEven(String s) {
+        int i;
+        for(i=s.length()-1;i>=0;i--){
+            if(s.charAt(i)=='2'){
+                break;
+            }
+        }
+        return s.substring(0,i+1);
+    }
+}
