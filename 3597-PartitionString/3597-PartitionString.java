@@ -1,0 +1,29 @@
+// Last updated: 9/9/2026, 12:33:33 PM
+import java.util.*;
+
+class Solution {
+    public List<String> partitionString(String s) {
+        int n = s.length();
+        List<String> segments = new ArrayList<>();
+        Set<String> seen = new HashSet<>();
+        int i = 0;
+
+        while (i < n) {
+            boolean found = false;
+            StringBuilder cur = new StringBuilder();
+            for (int j = i; j < n; j++) {
+                cur.append(s.charAt(j));
+                if (!seen.contains(cur.toString())) {
+                    found = true;
+                    segments.add(cur.toString());
+                    seen.add(cur.toString());
+                    i = j + 1;
+                    break;
+                }
+            }
+            if (!found) break;
+        }
+
+        return segments;
+    }
+}
