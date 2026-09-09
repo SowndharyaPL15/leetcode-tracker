@@ -1,0 +1,14 @@
+// Last updated: 9/9/2026, 2:11:54 PM
+class Solution {
+    public int[] countBits(int n) {
+        int [] dp=new int[n+1];
+        int s=1;
+        for(int i=1;i<=n;i++){
+            if(s*2==i){
+                s=i;
+            }
+            dp[i]=dp[i-s]+1;
+        }
+        return dp;
+    }
+}
